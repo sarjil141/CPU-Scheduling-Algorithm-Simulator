@@ -117,9 +117,14 @@ void sjfPreemptive(vector<Process> p) {
             wt[idx] = tat[idx] - p[idx].burst;
         }
     }
-
-    for (int i = 0; i < n; i++)
+    float totalWT = 0, totalTAT = 0;
+    for (int i = 0; i < n; i++){
         cout << p[i].pid << "\t" << wt[i] << "\t" << tat[i] << endl;
+       totalWT += wt[i];
+        totalTAT += tat[i];
+    }
+    cout << "Average Waiting Time: " << totalWT / n << endl;
+    cout << "Average Turnaround Time: " << totalTAT / n << endl;
 }
 
 
@@ -201,9 +206,15 @@ void priorityPreemptive(vector<Process> p) {
             wt[idx] = tat[idx] - p[idx].burst;
         }
     }
-
-    for (int i = 0; i < n; i++)
+    float totalWT = 0, totalTAT = 0;
+    for (int i = 0; i < n; i++){
         cout << p[i].pid << "\t" << wt[i] << "\t" << tat[i] << endl;
+        totalWT += wt[i];
+        totalTAT += tat[i];
+    }
+
+        cout << "Average Waiting Time: " << totalWT / n << endl;
+       cout << "Average Turnaround Time: " << totalTAT / n << endl;
 }
 
 
